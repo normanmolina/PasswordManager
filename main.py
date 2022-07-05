@@ -46,10 +46,7 @@ class PasswordManager:
 
 def main():
 	password = {
-		"email": "1234567",
-		"facebook": "myfbpassword",
-		"youtube": "helloworld123",
-		"somethingelse": "anotherpass_1414"
+		"example_site": "example_password",
 	}
 
 	pm = PasswordManager()
@@ -70,27 +67,27 @@ def main():
 
 		choice = input("Enter your choice: ")
 		if choice == "1":
-			path = input("Enter path: ")
+			path = input("Enter path where do you want to create a new key: ")
 			pm.create_key(path)
 		elif choice == "2":
-			path = input("Enter path: ")
+			path = input("Enter path where is the existing key: ")
 			pm.load_key(path)
 		elif choice == "3":
-			path = input("Enter path: ")
+			path = input("Enter path where do you want to create a new password file: ")
 			pm.create_password_file(path, password)
 		elif choice == "4":
-			path = input("Enter path: ")
+			path = input("Enter path where is the existing password file: ")
 			pm.load_password_file(path)
 		elif choice == "5":
-			site = input("Enter the site: ")
+			site = input("What is the name of the site that you want to add a password: ")
 			password = input("Enter the password: ")
 			pm.add_password(site, password)
 		elif choice == "6":
-			site = input("What site do you want: ")
+			site = input("What site do you want to get the password: ")
 			print(f"Password for {site} is {pm.get_password(site)}")
 		elif choice == "q":
 			done = True
-			print("Bye")
+			print("Good bye!")
 		else:
 			print("Invalid choice!")
 
